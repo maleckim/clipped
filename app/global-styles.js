@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #app {
-    background-color: #242628;
+    background-color: #03132c;
     min-height: 100%;
     min-width: 100%;
   }
@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
   .navbtn {
     margin-left: 5px;
     color:white;
-    background-color: #242628;
+    background-color: 	#03132c;
     border-color: #00FEDE;
   }
 
@@ -43,8 +43,17 @@ const GlobalStyle = createGlobalStyle`
   }
   
   .navicn {
-    background: #242628;
+    background: 	#03132c;
     color:#00FEDE;
+  }
+
+  .clip-main{
+    border-radius: 6px;
+    background-color: #19273d;
+    z-index: -1;
+    -webkit-box-shadow: 5px 5px 20px #03132c;
+    -moz-box-shadow: 5px 5px 20px #03132c;
+    box-shadow: 5px 5px 20px #03132c;
   }
 
   

@@ -5,7 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 export default function nameHeader(props) {
   return (
     <Dropdown>
-      <Dropdown.Toggle className="navbtn" id="dropdown-basic">
+      <Dropdown.Toggle className="navbtn px-4" id="dropdown-basic">
         {props.name}
       </Dropdown.Toggle>
 

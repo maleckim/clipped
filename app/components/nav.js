@@ -6,12 +6,12 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 export default function NavBar(props) {
   const [style, setStyle] = useState(false);
   return (
-    <div className="container">
-      <div className="d-flex flex-lg-col justify-content-around">
+    <div className="container-fluid">
+      <div className="d-flex justify-content-between">
         <div className="p-2">
           <h1>Clipped+</h1>
         </div>
-        <div className="p-2 w-50 align-self-center">
+        <div className="p-2 align-self-center w-75">
           <div className="input-group navsrch">
             <input
               type="text"

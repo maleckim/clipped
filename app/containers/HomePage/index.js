@@ -32,7 +32,19 @@ export default class HomePage extends Component {
           <Nav>
             <Login login={this.logIn} />
           </Nav>
-          <ClipMain url={dummy} />
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col">
+                <p>hey</p>
+              </div>
+              <div className="col">
+                <ClipMain url={dummy} />
+              </div>
+              <div className="col">
+                <p>hey</p>
+              </div>
+            </div>
+          </div>
         </>
       );
     }
@@ -41,7 +53,19 @@ export default class HomePage extends Component {
         <Nav>
           <NameHeader name={this.props.user} logout={this.logOutUser} />
         </Nav>
-        <ClipMain url={dummy} />
+        <div className="container-fluid mt-5">
+          <div className="row justify-content-between">
+            <div className="col-1">
+              <p>hey</p>
+            </div>
+            <div className="col-6 flex-grow-1 ">
+              <ClipMain url={dummy} />
+            </div>
+            <div className="justify-content-end">
+              <div className="p-2">Flex item 1</div>
+            </div>
+          </div>
+        </div>
       </>
     );
   }

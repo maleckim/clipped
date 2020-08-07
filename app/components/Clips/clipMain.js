@@ -4,7 +4,7 @@ import ClipCard from './clipCard';
 
 export default function ClipMain(props) {
   return (
-    <div className="d-flex flex-column text-center">
+    <div className="d-flex flex-column text-center clip-main">
       {props.url.map((url, index) => (
         <ClipCard key={url.id || index} url={url} />
       ))}
