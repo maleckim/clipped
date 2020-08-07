@@ -19,10 +19,12 @@ module.exports = {
     ecmaVersion: 6,
     sourceType: 'module',
     ecmaFeatures: {
+      legacyDecorators: true,
       jsx: true,
     },
   },
   rules: {
+    'no-plusplus': 'off',
     'prettier/prettier': ['error', prettierOptions],
     'arrow-body-style': [2, 'as-needed'],
     'class-methods-use-this': 0,

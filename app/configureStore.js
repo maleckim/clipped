@@ -55,5 +55,9 @@ export default function configureStore(initialState = {}, history) {
     });
   }
 
+  store.subscribe(() => {
+    console.log('store changed', store.getState());
+  });
+
   return store;
 }
