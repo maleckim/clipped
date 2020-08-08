@@ -5,6 +5,10 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
 import createSagaMiddleware from 'redux-saga';
+import startForman from './watchers/index';
+import { loginSaga } from './watchers/authenticationSaga';
+import watchUserAuthentication from './watchers/watchers';
+import loginReducer from './containers/LoginPage/reducer';
 import createReducer from './reducers';
 
 export default function configureStore(initialState = {}, history) {
@@ -41,10 +45,11 @@ export default function configureStore(initialState = {}, history) {
     initialState,
     composeEnhancers(...enhancers),
   );
+  sagaMiddleware.run(startForman, watchUserAuthentication, loginSaga);
 
   // Extensions
   store.runSaga = sagaMiddleware.run;
-  store.injectedReducers = {}; // Reducer registry
+  store.injectedReducers = { loginReducer }; // Reducer registry
   store.injectedSagas = {}; // Saga registry
 
   // Make reducers hot reloadable, see http://mxs.is/googmo

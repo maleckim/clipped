@@ -1,5 +1,7 @@
+/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
+import VideoPlayer from '../videoPlayer';
 
 export default function ClipCard(props) {
   return (

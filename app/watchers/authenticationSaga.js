@@ -2,7 +2,7 @@ import { put, call } from 'redux-saga/effects';
 import {
   registerUserService,
   loginUserService,
-} from '../../services/authenticationService';
+} from '../services/authenticationService';
 
 export function* registerSaga(payload) {
   try {
@@ -16,7 +16,7 @@ export function* registerSaga(payload) {
 export function* loginSaga(payload) {
   try {
     const response = yield call(loginUserService, payload);
-    yield [put({ type: 'LOGIN_USER_SUCCESS', response })];
+    yield put({ type: 'LOGIN_USER_SUCCESS', response });
   } catch (error) {
     yield put({ type: 'LOGIN_USER_ERROR', error });
   }
