@@ -56,6 +56,10 @@ const GlobalStyle = createGlobalStyle`
     box-shadow: 5px 5px 20px #03132c;
   }
 
+  // .clip-card{
+  //   border: 1px solid white
+  // }
+
   
 `;
 

@@ -24,34 +24,17 @@ export default class HomePage extends Component {
     this.props.dispatch(homeAction.setOnline());
   };
 
-  render() {
+  headerItem = () => {
     if (this.props.status === 'Offline') {
-      return (
-        <>
-          <Nav>
-            <Login login={this.logIn} />
-          </Nav>
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col">
-                <p>hey</p>
-              </div>
-              <div className="col">
-                <ClipProvider />
-              </div>
-              <div className="col">
-                <p>hey</p>
-              </div>
-            </div>
-          </div>
-        </>
-      );
+      return <Login login={this.logIn} />;
     }
+    return <NameHeader name={this.props.user} logout={this.logOutUser} />;
+  };
+
+  render() {
     return (
       <>
-        <Nav>
-          <NameHeader name={this.props.user} logout={this.logOutUser} />
-        </Nav>
+        <Nav>{this.headerItem()}</Nav>
         <div className="container-fluid mt-5">
           <div className="row justify-content-between">
             <div className="col-1">

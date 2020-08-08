@@ -1,37 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ReduxThunk from 'redux-thunk';
-import { connect, useSelector } from 'react-redux';
-import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
 import ClipMain from '../../components/Clips/clipMain';
 import fetchClips from './actions';
 
-export function ClipsProvider(props) {
-  useEffect(() => {
-    props.dispatch(fetchClips());
-  }, []);
-
-  const poop = useSelector(state => state.getIn(['clips', 'clipsFetched']));
-
-  if (props.clipsFetched === true) {
-    return <p>fetched!</p>;
+@connect(store => ({
+  clipsFetched: store.clips.clipsFetched,
+  clipsArray: store.clips.clipsArray,
+}))
+export default class HomePage extends Component {
+  componentDidMount() {
+    this.props.dispatch(fetchClips());
   }
-  return <p>waiting..</p>;
+
+  render() {
+    return <ClipMain clips={this.props.clipsArray} />;
+  }
 }
 
-ClipsProvider.propTypes = {
-  //   clipsFetched: PropTypes.bool,
-  //   clipsArray: PropTypes.arrayOf({}),
-  //   dispatch: PropTypes.func,
+HomePage.propTypes = {
+  clipsArray: PropTypes.array,
+  dispatch: PropTypes.func,
 };
-
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-  };
-}
-
-export default connect(
-  null,
-  mapDispatchToProps,
-)(ClipsProvider);
