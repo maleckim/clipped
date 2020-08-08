@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export default function NavBar(props) {
-  const [style, setStyle] = useState(false);
   return (
     <div className="container-fluid">
       <div className="d-flex justify-content-between">

@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import Nav from '../../components/nav';
 import Login from '../../components/login';
 import NameHeader from '../../components/nameHeader';
-import ClipMain from '../../components/Clips/clipMain';
+import ClipProvider from '../Clips/index';
 import * as homeAction from './actions';
 
 @connect(store => ({ status: store.home.status, user: store.home.user }))
@@ -25,7 +25,6 @@ export default class HomePage extends Component {
   };
 
   render() {
-    const dummy = ['hey', 'poop', 'die', 'eat'];
     if (this.props.status === 'Offline') {
       return (
         <>
@@ -38,7 +37,7 @@ export default class HomePage extends Component {
                 <p>hey</p>
               </div>
               <div className="col">
-                <ClipMain url={dummy} />
+                <ClipProvider />
               </div>
               <div className="col">
                 <p>hey</p>
@@ -59,7 +58,7 @@ export default class HomePage extends Component {
               <p>hey</p>
             </div>
             <div className="col-6 flex-grow-1 ">
-              <ClipMain url={dummy} />
+              <ClipProvider />
             </div>
             <div className="justify-content-end">
               <div className="p-2">Flex item 1</div>
