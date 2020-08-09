@@ -14,10 +14,10 @@ export default function clipsReducer(state = initialState, action) {
       ...state,
       clipsFetched: true,
       clipsArray: [
-        { name: 'matt', description: 'poop', clip: Clip },
-        { name: 'matt', description: 'poop', clip: Clip2 },
-        { name: 'matt', description: 'poop', clip: Clip3 },
-        { name: 'matt', description: 'poop', clip: Clip2 },
+        { name: 'Title Example 1', description: 'poop', clip: Clip },
+        { name: 'Title Example 2', description: 'poop', clip: Clip2 },
+        { name: 'Title Example 3', description: 'poop', clip: Clip3 },
+        { name: 'Title Example 4', description: 'poop', clip: Clip2 },
       ],
     };
   }

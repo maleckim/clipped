@@ -20,15 +20,13 @@ export default class HomePage extends Component {
     this.props.dispatch(homeAction.setOffline());
   };
 
-  logIn = () => {
-    this.props.dispatch(homeAction.setOnline());
-  };
+  logIn = () => this.props.history.push('/login');
 
   headerItem = () => {
-    if (this.props.status === 'Offline') {
-      return <Login login={this.logIn} />;
+    if (localStorage.getItem('user')) {
+      return <NameHeader name={this.props.user} logout={this.logOutUser} />;
     }
-    return <NameHeader name={this.props.user} logout={this.logOutUser} />;
+    return <Login login={this.logIn} />;
   };
 
   render() {
@@ -56,5 +54,4 @@ export default class HomePage extends Component {
 HomePage.propTypes = {
   user: PropTypes.string,
   dispatch: PropTypes.func,
-  status: PropTypes.string,
 };

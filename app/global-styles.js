@@ -45,6 +45,9 @@ const GlobalStyle = createGlobalStyle`
   .navicn {
     background: 	#03132c;
     color:#00FEDE;
+    border: none;
+    cursor: pointer;
+    z-index:50;
   }
 
   .clip-main{
@@ -56,9 +59,15 @@ const GlobalStyle = createGlobalStyle`
     box-shadow: 5px 5px 20px #03132c;
   }
 
-  // .clip-card{
-  //   border: 1px solid white
-  // }
+  .clip-card{
+    overflow: hidden;
+    height:fit-content;
+    margin-bottom: 5vh;
+  }
+
+  
+  
+  
 
   
 `;
