@@ -54,4 +54,5 @@ export default class HomePage extends Component {
 HomePage.propTypes = {
   user: PropTypes.string,
   dispatch: PropTypes.func,
+  history: PropTypes.object,
 };

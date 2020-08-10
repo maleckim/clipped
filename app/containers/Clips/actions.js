@@ -3,3 +3,9 @@ export default function fetchClips() {
     type: 'FETCH',
   };
 }
+
+export function viewClip() {
+  return {
+    type: 'VIEW',
+  };
+}

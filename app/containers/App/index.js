@@ -13,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import LoginPage from 'containers/LoginPage/index';
+
 import GlobalStyle from '../../global-styles';
 
 export default function App() {

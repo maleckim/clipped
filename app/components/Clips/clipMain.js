@@ -5,14 +5,7 @@ import ClipCard from './clipCard';
 export default function ClipMain(props) {
   return (
     <div className="d-flex flex-column text-center clip-main">
-      {props.clips.map((item, index) => (
-        <ClipCard
-          key={item.id || index}
-          src={item.clip}
-          title={item.name}
-          description={item.description}
-        />
-      ))}
+      <ClipCard clips={props.clips} view={props.viewClip} />
     </div>
   );
 }
@@ -23,4 +16,5 @@ ClipMain.defaultProps = {
 
 ClipMain.propTypes = {
   clips: PropTypes.array,
+  viewClip: PropTypes.func,
 };
