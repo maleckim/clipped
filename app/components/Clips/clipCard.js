@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import VoteCounter from './voteCounter';
 
 export default function ClipCard(props) {
-  console.log(props);
   return props.clips.map((item, index) => (
     <div className="row my-4">
       <div className="col clip-card mr-n4">
@@ -17,7 +16,7 @@ export default function ClipCard(props) {
           <p>comments</p>
         </a>
       </div>
-      <VoteCounter />
+      <VoteCounter id={item.id} addVote={props.vote} votes={item.votes} />
     </div>
   ));
 }

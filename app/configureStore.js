@@ -5,9 +5,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
 import createSagaMiddleware from 'redux-saga';
-import startForman from './watchers/index';
-import { loginSaga } from './watchers/authenticationSaga';
-import watchUserAuthentication from './watchers/watchers';
+import startForman from './watchers/auth/index';
+import { loginSaga } from './watchers/auth/authenticationSaga';
+import watchUserAuthentication from './watchers/auth/watchers';
 import loginReducer from './containers/LoginPage/reducer';
 import createReducer from './reducers';
 

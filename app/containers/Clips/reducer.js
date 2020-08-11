@@ -16,45 +16,72 @@ export default function clipsReducer(state = initialState, action) {
         ...state,
         clipsFetched: true,
         clipsArray: [
-          { id: '1', name: 'Title Example 1', description: 'poop', clip: Clip },
+          {
+            id: '1',
+            name: 'Title Example 1',
+            description: 'poop',
+            clip: Clip,
+            votes: 3,
+          },
           {
             id: '2',
             name: 'Title Example 2',
             description: 'poop',
             clip: Clip2,
+            votes: 8,
           },
           {
             id: '3',
             name: 'Title Example 3',
             description: 'poop',
             clip: Clip3,
+            votes: 1,
           },
           {
             id: '4',
             name: 'Title Example 4',
             description: 'poop',
             clip: Clip2,
+            votes: 2,
           },
         ],
       };
       break;
-    case 'VIEW':
-      state = { ...state, clipsView: true };
+    case 'USER_UPVOTE_SUCCESS':
+      state = {
+        ...state,
+        clipsArray: [
+          {
+            id: '1',
+            name: 'Title Example 1',
+            description: 'poop',
+            clip: Clip,
+            votes: 4,
+          },
+          {
+            id: '2',
+            name: 'Title Example 2',
+            description: 'poop',
+            clip: Clip2,
+            votes: 8,
+          },
+          {
+            id: '3',
+            name: 'Title Example 3',
+            description: 'poop',
+            clip: Clip3,
+            votes: 1,
+          },
+          {
+            id: '4',
+            name: 'Title Example 4',
+            description: 'poop',
+            clip: Clip2,
+            votes: 2,
+          },
+        ],
+      };
   }
 
   return state;
 }
-
-// export default function homeReducer(state = initialState, action) {
-//   switch (action.type) {
-//     case 'OUT':
-//       state = { ...state, status: 'Offline' };
-//       break;
-//     case 'IN':
-//       state = { ...state, status: 'Online' };
-//       break;
-//     default:
-//       return state;
-//   }
-//   return state;
-// }

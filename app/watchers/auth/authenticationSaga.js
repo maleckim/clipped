@@ -2,7 +2,7 @@ import { put, call } from 'redux-saga/effects';
 import {
   registerUserService,
   loginUserService,
-} from '../services/authenticationService';
+} from '../../services/authenticationService';
 
 export function* registerSaga(payload) {
   try {

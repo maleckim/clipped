@@ -5,7 +5,8 @@ import ClipCard from './clipCard';
 export default function ClipMain(props) {
   return (
     <div className="d-flex flex-column text-center clip-main">
-      <ClipCard clips={props.clips} view={props.viewClip} />
+      <h1>TOP CLIPS</h1>
+      <ClipCard clips={props.clips} vote={props.upVote} />
     </div>
   );
 }
@@ -16,5 +17,5 @@ ClipMain.defaultProps = {
 
 ClipMain.propTypes = {
   clips: PropTypes.array,
-  viewClip: PropTypes.func,
+  upVote: PropTypes.func,
 };

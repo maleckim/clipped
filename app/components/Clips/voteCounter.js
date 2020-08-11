@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 export default function VoteCounter(props) {
   return (
@@ -8,10 +9,14 @@ export default function VoteCounter(props) {
       <div className="d-flex flex-column ml-n2">
         <div className="p-1">
           <button type="button" className="input-group-text navicn">
-            <FontAwesomeIcon icon={faArrowUp} className="navicn" />
+            <FontAwesomeIcon
+              onClick={() => props.addVote(props.id)}
+              icon={faArrowUp}
+              className="navicn"
+            />
           </button>
         </div>
-        <div className="p-1">{props.name || 0}</div>
+        <div className="p-1">{props.votes}</div>
         <div className="p-1">
           <button type="button" className="input-group-text navicn">
             <FontAwesomeIcon icon={faArrowDown} className="navicn" />
@@ -21,3 +26,9 @@ export default function VoteCounter(props) {
     </div>
   );
 }
+
+VoteCounter.propTypes = {
+  id: PropTypes.string,
+  votes: PropTypes.number,
+  addVote: PropTypes.func,
+};

@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ClipMain from '../../components/Clips/clipMain';
-import fetchClips from './actions';
-import clipsView from './actions';
+import * as clipActions from './actions';
 
 @connect(store => ({
   clipsFetched: store.clips.clipsFetched,
@@ -12,15 +11,15 @@ import clipsView from './actions';
 }))
 export default class HomePage extends Component {
   componentDidMount() {
-    this.props.dispatch(fetchClips());
+    this.props.dispatch(clipActions.fetchClips());
   }
 
-  viewClip = id => {
-    this.props.dispatch(clipsView());
+  upVote = id => {
+    this.props.dispatch(clipActions.upvoteClip(id));
   };
 
   render() {
-    return <ClipMain clips={this.props.clipsArray} viewClip={this.viewClip} />;
+    return <ClipMain clips={this.props.clipsArray} upVote={this.upVote} />;
   }
 }
 
