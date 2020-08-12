@@ -5,3 +5,6 @@
   <li>implement redux-sagas for async fetches</li>
   <li>spend more time focusing on design</li>
 </ul>
+
+<h1>Current Progress</h1>
+<img src='app/assets/clipped.PNG'>
