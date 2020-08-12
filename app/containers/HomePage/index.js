@@ -13,6 +13,7 @@ import Login from '../../components/login';
 import NameHeader from '../../components/nameHeader';
 import ClipProvider from '../Clips/index';
 import * as homeAction from './actions';
+import ChartsTest from '../../components/RightDisplayTest/chartsTest';
 
 @connect(store => ({ status: store.home.status, user: store.home.user }))
 export default class HomePage extends Component {
@@ -34,15 +35,17 @@ export default class HomePage extends Component {
       <>
         <Nav>{this.headerItem()}</Nav>
         <div className="container-fluid mt-5">
-          <div className="row justify-content-between">
-            <div className="col-1">
-              <p>hey</p>
+          <div className="row justify-content-around">
+            <div className="col-1 left-form">
+              <p>form here</p>
             </div>
             <div className="col-6 flex-grow-1 ">
               <ClipProvider />
             </div>
             <div className="justify-content-end">
-              <div className="p-2">Flex item 1</div>
+              <div className="p-2">
+                <ChartsTest />
+              </div>
             </div>
           </div>
         </div>
