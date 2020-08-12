@@ -5,7 +5,7 @@ import ClipCard from './clipCard';
 export default function ClipMain(props) {
   return (
     <div className="d-flex flex-column text-center clip-main">
-      <h1>TOP CLIPS</h1>
+      <h1>TOP ( filterable ?? )</h1>
       <ClipCard clips={props.clips} vote={props.upVote} />
     </div>
   );

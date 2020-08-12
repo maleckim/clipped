@@ -11,7 +11,7 @@ export default class LineGraph extends Component {
     const myChartRef = this.chartRef.current.getContext('2d');
 
     new Chart(myChartRef, {
-      type: 'bar',
+      type: 'line',
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [

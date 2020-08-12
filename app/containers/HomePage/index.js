@@ -37,7 +37,7 @@ export default class HomePage extends Component {
         <div className="container-fluid mt-5">
           <div className="row justify-content-around">
             <div className="col-1 left-form">
-              <p>form here</p>
+              <p>form posts here ??</p>
             </div>
             <div className="col-6 flex-grow-1 ">
               <ClipProvider />
@@ -45,6 +45,9 @@ export default class HomePage extends Component {
             <div className="justify-content-end">
               <div className="p-2">
                 <ChartsTest />
+              </div>
+              <div className="p-2">
+                <p>Other statistics ? Rankings ? Enjoyment ?</p>
               </div>
             </div>
           </div>
